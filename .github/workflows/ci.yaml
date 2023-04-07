@@ -28,4 +28,4 @@ jobs:
         run: npx surge --project ./build --domain doyyan.surge.sh
         env:
           SURGE_LOGIN: { { secrets.SURGE_LOGIN } }
-          SUREG_TOKEN: { { secrets.SURGE_TOKEN } }
+          SURGE_TOKEN: { { secrets.SURGE_TOKEN } }
