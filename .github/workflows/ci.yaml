@@ -2,16 +2,21 @@ name: CI
 
 on:
   pull_request:
+<<<<<<< HEAD
     branches: [develop, master]
   push:
     branches: [develop, master]
+=======
+    branches: [develop]
+  push:
+    branches: [develop]
+>>>>>>> develop
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Use NodeJS
         uses: actions/setup-node@v3
         with:
