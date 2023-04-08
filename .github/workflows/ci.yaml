@@ -30,8 +30,8 @@ jobs:
       - name: Upload Test Coverage
       - uses: actions/upload-artifact@v1
         with: 
-            name: code-coverage
-            path: coverage   
+          name: code-coverage
+          path: coverage   
 
 
       - name: Build Project
