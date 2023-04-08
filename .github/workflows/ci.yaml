@@ -49,6 +49,8 @@ jobs:
 
       - name: Download Artifact
         uses: actions/download-artifact
+        with:
+          name: build
 
       - name: Deploy to Staging
         if: github.event_name == 'push'
