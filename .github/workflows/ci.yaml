@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Cache node_modules
         uses: actions/cache@v1
         with:
@@ -18,6 +19,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json')}}
           restore-keys: |
             ${{ runner.os }}-node-
+
       - name: Use NodeJS
         uses: actions/setup-node@v3
         with:
@@ -30,15 +32,23 @@ jobs:
 
       - name: Upload Test Coverage
         uses: actions/upload-artifact@v1
-        with: 
+        with:
           name: code-coverage
-          path: coverage   
-
+          path: coverage
 
       - name: Build Project
         if: github.event_name == 'push'
         run: npm run build
 
+      - name: Upload Build Artifacts
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v1
+        with:
+          name: build
+          path: build
+
+      - name: Download Artifact
+        uses: actions/download-artifact
 
       - name: Deploy to Staging
         if: github.event_name == 'push'
