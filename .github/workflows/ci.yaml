@@ -11,6 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json')}}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Use NodeJS
         uses: actions/setup-node@v3
         with:
@@ -20,14 +29,6 @@ jobs:
       - run: npm test -- --coverage
         env:
           CI: true
-
-      - name: Cache node_modules
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json')}}
-          restore-keys: |
-            ${{ runner.os }}-node-
 
       - name: Upload Test Coverage
         uses: actions/upload-artifact@v1
