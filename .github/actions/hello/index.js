@@ -4,7 +4,7 @@ const github = require("@actions/github");
 try {
   //   throw( new Error(" Deliberate error was thrown! "))
 
-  core.message(" A debug message");
+  core.debug(" A debug message");
   core.warning(" A warning ");
   core.error(" An error message ");
 
