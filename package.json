@@ -48,9 +48,9 @@
     "type": "git",
     "url": "https://github.com/doyyan/react-app"
   },
-  "husky" : {
+  "husky": {
     "hooks": {
-    "commit-msg": "commitlint -e HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -e HUSKY_GIT_PARAMS"
     }
   }
 }
