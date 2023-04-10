@@ -1,6 +1,6 @@
 on: push
 jobs:
-  testing-action:
+  testing-action-docker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
