@@ -38,11 +38,19 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
+    "husky": "^8.0.3",
     "prettier": "2.8.7",
     "semantic-release": "^21.0.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/doyyan/react-app"
+  },
+  "husky" : {
+    "hooks": {
+    "commit-msg": "commitlint -e HUSKY_GIT_PARAMS"
+    }
   }
 }
