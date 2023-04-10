@@ -1892,7 +1892,7 @@ const core = __webpack_require__(470);
 const github = __webpack_require__(469);
 
 try {
-  // throw( new Error()
+  throw( new Error(" Deliberate error was thrown! "))
 
   const name = core.getInput("who-to-greet");
   console.log(`Hello ${name}`);
