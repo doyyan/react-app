@@ -1888,23 +1888,21 @@ exports.endpoint = endpoint;
 /***/ 239:
 /***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
 
-try {
-    // throw( new Error())
-
 const core = __webpack_require__(470);
 const github = __webpack_require__(469);
 
-const name = core.getInput('who-to-greet')
-core.setOutput("time", time.toTimeString())
+try {
+  // throw( new Error()
 
-console.log(`Hello ${name}`);
+  const name = core.getInput("who-to-greet");
+  core.setOutput("time", time.toTimeString());
 
-console.log(JSON.stringify(github, null, '\t'))
+  console.log(`Hello ${name}`);
+
+  console.log(JSON.stringify(github, null, "\t"));
 } catch (error) {
-    core.setFailed(error.message)
-    
+  core.setFailed(error.message);
 }
-
 
 
 /***/ }),
