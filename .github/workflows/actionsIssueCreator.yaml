@@ -1,0 +1,18 @@
+on: push
+jobs
+  issue-creation-action:
+    runs-on: ubuntu-lates
+    steps: 
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/gitHubIssueCreator
+        id: issuer
+        with:
+          token: ${{ github.GITHUB_TOKEN }}
+          title: TestIssue Title
+          body: Body
+          assignees: |
+            doyyan2
+            doyyan
+      - run: }
+          echo: ${{ steps.issuer.outputs.issue }}
+            
