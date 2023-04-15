@@ -1,0 +1,17 @@
+name: Hello World
+author: Ali Alaa
+description: Some description
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: Ali
+outputs:
+  time:
+    description: "The Greeting time"
+runs:
+  using: "node12"
+  main: "dist/index.js"
+branding:
+  icon: "alert-octagon"
+  color: "purple"
