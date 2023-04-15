@@ -1,8 +1,8 @@
 on: push
-jobs
+jobs:
   issue-creation-action:
     runs-on: ubuntu-lates
-    steps: 
+    steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/gitHubIssueCreator
         id: issuer
@@ -13,6 +13,6 @@ jobs
           assignees: |
             doyyan2
             doyyan
-      - run: }
+      - run: |
           echo: ${{ steps.issuer.outputs.issue }}
-            
+
