@@ -15,4 +15,3 @@ jobs:
             doyyan
       - run: |
           echo: ${{ steps.issuer.outputs.issue }}
-
